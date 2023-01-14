@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import { DataContext } from "./Components/DataContext";
+import Question from "./Components/Question";
+import Answer from "./Components/Answer";
+import StartPage from "./Components/StartPage";
 
-function App() {
+export default function App() {
+
+   const [quizState, setQuizState] = useState("StartPage")
+   const [score, setScore] = useState(0) //each question is woth 3 marks, total : 15 marks
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="content">
+        <DataContext.Provider value={{quizState,setQuizState,score,setScore}}>
+          {quizState === "StartPage" && <StartPage/>}
+          {quizState === "Question" && <Question/>}
+          {quizState === "Answer" && <Answer/>}
+        </DataContext.Provider>
+      </div>
   );
 }
 
-export default App;

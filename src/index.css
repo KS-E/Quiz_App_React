@@ -1,13 +1,139 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: url('../public/Images/quiz_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start-container,
+.question-container,
+.endpage-container {
+  display: flexbox;
+  width: 40vw;
+  height: 60vh;
+  padding: 10px;
+  background-color: antiquewhite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  border-radius: 4%;
+}
+
+.heading {
+  color: rgb(126, 68, 68);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+.sub-heading {
+  color: rgb(173, 76, 76);
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.content {
+  height: 55vh;
+  margin-top: 20px;
+  padding: 5px;
+  align-content: center;
+  justify-content: center;
+  color: rgb(165, 77, 14);
+}
+
+.question {
+  color: rgb(165, 77, 14);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.finish-bttn,
+.startBttn,
+.nextQuestion-bttn {
+  display: flex;
+  width: 60%;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 9px;
+  background-color: rgb(238, 181, 106);
+  border: none;
+  color: rgb(165, 77, 14);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nextQuestion-bttn {
+  margin-top: 1em;
+}
+
+.finish-bttn {
+  margin-top: 1em;
+}
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer {
+  width: 50%;
+  height: fit-content;
+  padding: 5px;
+  font-size: 20px;
+  background-color: rgb(228, 156, 62);
+  border-radius: 10px;
+  border: none;
+  color: beige;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+
+.answer:hover {
+  transform: scale(1.1);
+  background-color: rgb(150, 89, 9);
+}
+
+.answer:focus {
+  transform: scale(1);
+  background-color: rgb(245, 205, 75);
+}
+
+.end-line {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.score {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+@keyframes bttn-effect {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
 }
